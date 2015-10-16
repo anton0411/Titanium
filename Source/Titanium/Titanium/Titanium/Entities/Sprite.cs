@@ -14,6 +14,7 @@ namespace Titanium.Entities
         private Rectangle sourceRect, destRect;
         private double elapsed, delay;
         private int frames, posX, posY, frameCount;
+        private UnitStats rawStats;
 
         //For testing purpose only
         Texture2D spriteFile;
@@ -31,8 +32,18 @@ namespace Titanium.Entities
 
         public void Load(ContentManager content)
         {
-            spriteFile = content.Load<Texture2D>(filePath);
+            spriteFile = content.Load<Texture2D>("Sprites/"+filePath);
             destRect = new Rectangle(posX, posY, spriteFile.Width / frameCount, spriteFile.Height);
+        }
+
+        public void setParam(UnitStats u, int x, int y)
+        {
+            this.rawStats = u;
+            this.posX = x;
+            this.posY = y;
+            this.filePath += rawStats.model + "_idle";
+            this.frameCount = rawStats.modelFrameCount;
+            this.rawStats.normalize();
         }
 
         public void setParam(String s, int x, int y, int totalFrames)
@@ -71,5 +82,57 @@ namespace Titanium.Entities
 
             sourceRect = new Rectangle(spriteFile.Width / frameCount * frames, 0, spriteFile.Width / frameCount, spriteFile.Height);
         }
+
+
+
+
+
+
+
+        /**
+        *COMBAT STARTS HERE
+        **/
+        public void takeDamage(int damage)
+        {
+            this.rawStats.currentHP -= damage;
+            checkDeath();
+        }
+
+        public void useMana(int mana)
+        {
+            this.rawStats.currentMP -= mana;
+        }
+
+        public void quickAttack(Sprite s)
+        {
+            int damageDone = 0;
+            damageDone += this.rawStats.baseAttack + (int)Math.Round(this.rawStats.strength * 1.5);
+            damageDone = (int)Math.Round(damageDone * 0.8);
+            s.takeDamage(damageDone);
+        }
+
+        public void normalAttack(Sprite s)
+        {
+            int damageDone = 0;
+            damageDone += this.rawStats.baseAttack + (int)Math.Round(this.rawStats.strength * 1.5);
+            s.takeDamage(damageDone);
+        }
+        
+        public void strongAttack(Sprite s)
+        {
+            int damageDone = 0;
+            damageDone += this.rawStats.baseAttack + (int)Math.Round(this.rawStats.strength * 1.5);
+            damageDone = (int)Math.Round(damageDone * 1.2);
+            s.takeDamage(damageDone);
+        }
+
+        public Boolean checkDeath()
+        {
+            if (this.rawStats.currentHP <= 0)
+                return true;
+            return false;
+        }
+
+
     }
 }
