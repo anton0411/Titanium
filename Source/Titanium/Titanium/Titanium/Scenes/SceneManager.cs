@@ -21,7 +21,9 @@ namespace Titanium.Scenes
     /// </summary>
     class SceneManager : DrawableGameComponent
     {
-        Scene[] scenes = new Scene[Enum.GetNames(typeof(SceneState)).Length];
+        public static int NUM_SCENESTATES = 3;
+
+        Scene[] scenes = new Scene[NUM_SCENESTATES];
 
         SceneState currentState;
 
