@@ -11,6 +11,8 @@ using Microsoft.Xna.Framework.Media;
 using Titanium.Entities;
 using Titanium.Gambits;
 using Titanium.Scenes.Panels;
+using FileHelpers;
+using System.Text;
 
 namespace Titanium.Scenes
 {
@@ -91,19 +93,18 @@ namespace Titanium.Scenes
             Sprite Creation Area; to be done via file parsing
             ************************************************/
             Sprite s = new Sprite();
-            s.setParam("Sprites/axel_idle", 1000, 150, 3);
             AllySprites.Add(s);
             Sprite t = new Sprite();
-            t.setParam("Sprites/etna_idle", 1000, 300, 6);
             AllySprites.Add(t);
+
+            loadStats(AllySprites, "PlayerFile.txt", 0);
+
             Sprite u = new Sprite();
-            u.setParam("Sprites/prinny_idle", 500, 150, 7);
             EnemySprites.Add(u);
             Sprite v = new Sprite();
-            v.setParam("Sprites/catsaber_idle", 500, 300, 6);
             EnemySprites.Add(v);
 
-
+            loadStats(EnemySprites, "Stage_1_1.txt", 1);
 
             foreach (Sprite sp in AllySprites)
             {
@@ -117,6 +118,33 @@ namespace Titanium.Scenes
             Ends Here
             ************************************************/
 
+        }
+
+        public void loadStats(List<Sprite> l, String target, int side)
+        {
+            var engine = new FileHelperAsyncEngine<UnitStats>();
+            int xpos = 0;
+            if (side == 0)
+                xpos = 1000;
+            else if (side == 1)
+                xpos = 500;
+            int ypos = 150;
+            String path = "../../../../TitaniumContent/Status/";
+
+            using (engine.BeginReadFile(path+target))
+            {
+                List<UnitStats> tempList = new List<UnitStats>();
+                foreach (UnitStats u in engine)
+                {
+                    tempList.Add(u);
+                }
+
+                for (int i = 0; i < l.Count; ++i)
+                {
+                    l[i].setParam(tempList[i], xpos, ypos);
+                    ypos += 150;
+                }
+            }
         }
 
         /**

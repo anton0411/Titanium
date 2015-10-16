@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Titanium", "Titanium\Titani
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TitaniumContent", "Titanium\TitaniumContent\TitaniumContent.contentproj", "{9C9101C6-038F-4815-9E29-28AE9D90AEB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xbox 360 Copy of Titanium", "Titanium\Titanium\Xbox 360 Copy of Titanium.csproj", "{77CCA01D-B1D6-43EC-9D1F-E477FFCFC5E3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xbox 360 Copy of Titanium", "Titanium\Titanium\Xbox 360 Copy of Titanium.csproj", "{A734B73E-89E9-4415-BE6A-2EBD0328F226}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,16 +35,16 @@ Global
 		{9C9101C6-038F-4815-9E29-28AE9D90AEB8}.Release|Any CPU.ActiveCfg = Release|x86
 		{9C9101C6-038F-4815-9E29-28AE9D90AEB8}.Release|x86.ActiveCfg = Release|x86
 		{9C9101C6-038F-4815-9E29-28AE9D90AEB8}.Release|Xbox 360.ActiveCfg = Release|x86
-		{77CCA01D-B1D6-43EC-9D1F-E477FFCFC5E3}.Debug|Any CPU.ActiveCfg = Debug|Xbox 360
-		{77CCA01D-B1D6-43EC-9D1F-E477FFCFC5E3}.Debug|x86.ActiveCfg = Debug|Xbox 360
-		{77CCA01D-B1D6-43EC-9D1F-E477FFCFC5E3}.Debug|Xbox 360.ActiveCfg = Debug|Xbox 360
-		{77CCA01D-B1D6-43EC-9D1F-E477FFCFC5E3}.Debug|Xbox 360.Build.0 = Debug|Xbox 360
-		{77CCA01D-B1D6-43EC-9D1F-E477FFCFC5E3}.Debug|Xbox 360.Deploy.0 = Debug|Xbox 360
-		{77CCA01D-B1D6-43EC-9D1F-E477FFCFC5E3}.Release|Any CPU.ActiveCfg = Release|Xbox 360
-		{77CCA01D-B1D6-43EC-9D1F-E477FFCFC5E3}.Release|x86.ActiveCfg = Release|Xbox 360
-		{77CCA01D-B1D6-43EC-9D1F-E477FFCFC5E3}.Release|Xbox 360.ActiveCfg = Release|Xbox 360
-		{77CCA01D-B1D6-43EC-9D1F-E477FFCFC5E3}.Release|Xbox 360.Build.0 = Release|Xbox 360
-		{77CCA01D-B1D6-43EC-9D1F-E477FFCFC5E3}.Release|Xbox 360.Deploy.0 = Release|Xbox 360
+		{A734B73E-89E9-4415-BE6A-2EBD0328F226}.Debug|Any CPU.ActiveCfg = Debug|Xbox 360
+		{A734B73E-89E9-4415-BE6A-2EBD0328F226}.Debug|x86.ActiveCfg = Debug|Xbox 360
+		{A734B73E-89E9-4415-BE6A-2EBD0328F226}.Debug|Xbox 360.ActiveCfg = Debug|Xbox 360
+		{A734B73E-89E9-4415-BE6A-2EBD0328F226}.Debug|Xbox 360.Build.0 = Debug|Xbox 360
+		{A734B73E-89E9-4415-BE6A-2EBD0328F226}.Debug|Xbox 360.Deploy.0 = Debug|Xbox 360
+		{A734B73E-89E9-4415-BE6A-2EBD0328F226}.Release|Any CPU.ActiveCfg = Release|Xbox 360
+		{A734B73E-89E9-4415-BE6A-2EBD0328F226}.Release|x86.ActiveCfg = Release|Xbox 360
+		{A734B73E-89E9-4415-BE6A-2EBD0328F226}.Release|Xbox 360.ActiveCfg = Release|Xbox 360
+		{A734B73E-89E9-4415-BE6A-2EBD0328F226}.Release|Xbox 360.Build.0 = Release|Xbox 360
+		{A734B73E-89E9-4415-BE6A-2EBD0328F226}.Release|Xbox 360.Deploy.0 = Release|Xbox 360
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
